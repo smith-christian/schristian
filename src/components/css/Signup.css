@@ -1,0 +1,14 @@
+.signup__wrapper {
+  display: table-cell;
+  height: 100%;
+  /* vertical-align: middle; */
+  padding-top: 120px;
+}
+
+.content h2{
+  margin-top: 10%;
+}
+
+.signup__push__down{
+  margin-top: 7%;
+}

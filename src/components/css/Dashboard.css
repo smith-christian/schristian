@@ -1,0 +1,17 @@
+.box {
+    /* border: 2px solid blanchedalmond; */
+    width: 85%;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+.__flex {
+    display: var(--flex);
+    justify-content: space-between;
+}
+
+/* .__flex div button{
+    margin: 1% 0;
+} */

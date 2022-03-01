@@ -1,0 +1,13 @@
+/* .performance__button:hover {
+    background: pink;
+} */
+.performance__chart {
+    background-color: var(--Maritime--Blue);
+    width: auto;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.performance__button:focus {
+    background: pink;
+}
