@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{color: black}
+            .live{color:green}
+            .notlive { color: red }
+            .center{text-align: center;}
+            table.center {
+                margin-left: auto; 
+                margin-right: auto;
+            }
+            table, th, td { width: 50%;  border: 1px solid black; align-items: center;}
+        </style>
+    </head>
+    <body>
+        
+        <button onclick="window.location.reload()">Refresh </button>
+        {% if data %}
+            <div><h1 class="center">ESI Live Sensor Data <span class="live">&#11044</span> </h1></div>
+            
+            <br>
+            <br>
+            <br>
+
+            <table class="center">
+                {% for d in data.items %}
+                    {% if d.0 != "RAW" and d.0 != "_id" %}
+                        <!-- <li>{{d.0}} : {{d.1}}</li> -->
+                        <tr>
+                            <th>{{d.0}}</th>
+                            <td>{{d.1}}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </table>
+        {% else %}
+            <div><h1 class="center">ESI Live Sensor Data <span class="notlive">&#11044</span> </h1></div>
+                
+            <br>
+            <br>
+            <br> 
+           
+        {% endif %}
+        <!-- <script type="module">
+            import io from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+
+            const sio = io();
+
+            sio.on("connect", () => {
+                console.log("connected"); // true
+            });
+
+            sio.on("test_data", (data) => {
+                console.log(data); // true
+            });
+            
+            sio.on("my_message", (data) => {
+                console.log(data); // true
+            });
+
+            sio.on("disconnect", () => {
+                console.log("Disconnected"); // false
+            });
+        </script> -->
+    </body>
+</html>
